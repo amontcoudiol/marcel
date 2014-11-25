@@ -20,10 +20,11 @@ class User < ActiveRecord::Base
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
 
-    if user and user.confirmed?
-      user.update_attribute('fb_access_token', access_token)
-      user
+    if user and user.persisted?
+      user.update_attribute('fb_access_token', auth['credentials']['token'])
     end
+
+    user
   end
 
 
