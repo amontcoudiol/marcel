@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+ <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+ <br/>
+ <%= current_user.first_name %>
+ <%= current_user.last_name %>
+ <%= current_user.email %>
+ <%= current_user.birthday %>
+ <%= current_user.gender %>
+<% else %>
+ <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+<% end %>
