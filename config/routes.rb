@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  root to: "home#index"
+  get 'user/index'
 
+  get 'user/show'
+
+  get 'user/new'
+
+  get 'user/create'
+
+  get 'user/edit'
+
+  get 'user/update'
+
+  get 'user/destroy'
+
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  root to: "home#index"
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
