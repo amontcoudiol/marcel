@@ -1,18 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'user/index'
+  resources :users
 
-  get 'user/show'
+  get "start_voting/" => "campaigns#start_voting", as: :start_voting
 
-  get 'user/new'
-
-  get 'user/create'
-
-  get 'user/edit'
-
-  get 'user/update'
-
-  get 'user/destroy'
+  get "votes/:id", to: "votes#show"
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: "home#index"
