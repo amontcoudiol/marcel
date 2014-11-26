@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/* facebook photo picker */
+.thumbnail.selected {
+    background-color: #428bca;
+}
+.loading {
+    text-align: center;
+}
+.modal-body {
+    max-height: 600px;
+    overflow-y: auto;
+}
