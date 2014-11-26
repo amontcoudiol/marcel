@@ -1,18 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'user/index'
+  resources :users
 
-  get 'user/show'
-
-  get 'user/new'
-
-  get 'user/create'
-
-  get 'user/edit'
-
-  get 'user/update'
-
-  get 'user/destroy'
+  get 'target/' => 'users#target', as: :target
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: "home#index"
