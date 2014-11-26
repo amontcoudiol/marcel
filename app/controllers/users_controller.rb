@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user.update(params[:user])
+    @user.update(target_params)
   end
 
   def destroy
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   private
 
   def target_params
-    params.require(:user).permit(:target_gender, :target_min_age, :target_max_age)
+    params.require(:user).permit(:target_gender, :target_min_age, :target_max_age, :city)
   end
 
 

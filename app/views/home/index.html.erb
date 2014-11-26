@@ -3,6 +3,9 @@
 <h1> Tinder Genius </h1>
 
 
+<img src="http://img4.hostingpics.net/pics/222751tglogo1.jpg">
+
+</br>
 
 <% if user_signed_in? %>
  <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
@@ -12,6 +15,6 @@
  <%= link_to "Connect with Facebook", user_omniauth_authorize_path(:facebook) %>
 <% end %>
 
-<img src="http://www.independent.ie/incoming/article30454079.ece/BINARY/Tinder-Like.png">
+
 
 

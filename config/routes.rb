@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  get 'users/target/' => 'users#target', as: :target
+  get 'target/' => 'users#target', as: :target
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: "home#index"

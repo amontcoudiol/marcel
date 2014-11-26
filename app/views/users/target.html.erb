@@ -1,15 +1,18 @@
 <h1>What are you looking for? </h1>
 
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, :url => user_path(current_user.id),) do |f| %>
   <%= f.label :target_gender %>
-  <%= f.text_field :target_gender %>
-
+  <%= f.select :target_gender, [["female"],["male"]]%>
+  <br>
   <%= f.label :target_min_age %>
-  <%= f.text_field :target_min_age %>
-
+  <%= f.number_field :target_min_age, min: 18 %>
+  <br>
   <%= f.label :target_max_age %>
-  <%= f.text_field :target_max_age %>
-
-  <%= f.submit %>
+  <%= f.number_field :target_max_age, min: 18 %>
+  <br>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <br>
+  <%= f.submit 'Next' %>
 <% end %>
