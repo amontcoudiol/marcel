@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   resources :users
 
   get "start_voting/" => "campaigns#start_voting", as: :start_voting
-  get "votes/:id", to: "votes#show"
+  get "votes/:id" => "votes#new", as: :new_vote
+  post "votes/:id" => "votes#create", as: :vote
+  get "campaigns/:id", to: "campaigns#show", as: :voting
+  post "campaigns/:id", to: "campaigns#create", as: :campaign
   get 'target/' => 'users#target', as: :target
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }

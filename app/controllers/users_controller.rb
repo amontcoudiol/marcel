@@ -30,8 +30,8 @@ class UsersController < ApplicationController
   private
 
   def next_campaign
-    @user = User.find(36)
-    @target_users = targets(@user) # to be replaced by current_user
+    @user = User.find(36) # to be replaced by current_user
+    @target_users = targets(@user)
     @target_campaigns = []
     @target_users.each do |user|
       @target_campaigns << user.campaign.where(status: true)
