@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20141126135457) do
     t.string   "token"
     t.datetime "token_expiry"
     t.date     "birthday"
+    t.string   "fb_access_token"
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

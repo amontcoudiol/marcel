@@ -1,2 +1,27 @@
-<h1>User#update</h1>
-<p>Find me in app/views/user/update.html.erb</p>
+<h1>Upload a picture</h1>
+
+<a class="btn btn-lg btn-primary" data-toggle="modal" href="#facebook_photo_selector">Select Facebook Photo</a>
+
+<!-- Facebook photo selector modal -->
+<div id="facebook_photo_selector" class="modal fade">
+   <div class="modal-dialog">
+       <div class="modal-content">
+           <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Choose a photo</h4>
+           </div>
+           <div class="modal-body">
+               <div class="form">
+                   <label>Select Facebook Album:</label>
+                   <select class="fbps-albums" name="facebook_photo_album"></select>
+               </div>
+               <hr>
+               <div class="fbps-photos clearfix"></div>
+           </div>
+           <div class="modal-footer">
+               <button type="button" class="btn btn-default fbps-cancel" data-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary fbps-select" data-dismiss="modal">Select Photo</button>
+           </div>
+       </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

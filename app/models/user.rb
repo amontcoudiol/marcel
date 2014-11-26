@@ -7,18 +7,25 @@ class User < ActiveRecord::Base
   has_many :campaigns, dependent: :destroy
 
   def self.find_for_facebook_oauth(auth)
-   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-     user.provider = auth.provider
-     user.uid = auth.uid
-     user.email = auth.info.email
-     user.password = Devise.friendly_token[0,20]  # Fake password for validation
-     user.first_name = auth.info.first_name
-     user.last_name = auth.info.last_name
-     user.birthday = auth.extra.raw_info.birthday
-     user.gender = auth.extra.raw_info.gender
-     user.token = auth.credentials.token
-     user.token_expiry = Time.at(auth.credentials.expires_at)
-   end
+    user = self.where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]  # Fake password for validation
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
+      user.birthday = auth.extra.raw_info.birthday
+      user.gender = auth.extra.raw_info.gender
+      user.token = auth.credentials.token
+      user.token_expiry = Time.at(auth.credentials.expires_at)
+    end
+
+    if user and user.persisted?
+      user.update_attribute('fb_access_token', auth['credentials']['token'])
+    end
+
+    user
   end
+
 
 end

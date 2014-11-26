@@ -15,7 +15,13 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def target
+    @user = current_user
+  end
+
   def update
+    @user = current_user
+    @user.update(target_params)
   end
 
   def destroy
@@ -45,4 +51,9 @@ class UsersController < ApplicationController
         .where("birthday >= ?", Time.now - user.target_max_age.years - 1.years)
         .where("birthday <= ?", Time.now - user.target_min_age.years)
   end
+
+  def target_params
+    params.require(:user).permit(:target_gender, :target_min_age, :target_max_age, :city)
+  end
+
 end

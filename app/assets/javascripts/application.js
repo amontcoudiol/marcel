@@ -14,3 +14,35 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require facebookphotoselector.jquery
+//= require bootstrap-sprockets
+
+$(function() {
+ window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1540320802851738',
+      xfbml      : true,
+      version    : 'v2.1'
+    });
+
+    FacebookPhotoSelector.setFacebookSDK(FB);
+
+
+    $('#facebook_photo_selector').facebookPhotoSelector({
+        onFinalSelect : function(photos)
+        {
+            console.log(photos);
+        }
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+});
+
