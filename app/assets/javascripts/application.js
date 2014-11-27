@@ -27,7 +27,7 @@ $(function() {
 
     FacebookPhotoSelector.setFacebookSDK(FB);
 
-
+    var myPhotos = [];
     $('#facebook_photo_selector').facebookPhotoSelector({
         onFinalSelect : function(photos)
         {
@@ -40,10 +40,18 @@ $(function() {
 
             $.post("/pictures", { picture: { file: photo_url } }, function(data) {
               console.log(data.id);
-              $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
-              $('<a class="btn btn-lg btn-primary" id="second" data-toggle="modal" href="#facebook_photo_selector">Select Your 2nd Photo</a>').appendTo("#select_button");
-              $("#first").hide()
 
+              myPhotos.push(data);
+
+              if (myPhotos.length === 1) {
+                $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
+                $("#select_button").append('<a class="btn btn-lg btn-primary" id="second" data-toggle="modal" href="#facebook_photo_selector">Select Your 2nd Photo</a>');
+                $("#first").hide()
+              } else {
+                $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
+                $("#second").hide()
+                $("#select_button").append('<a class="btn btn-lg btn-danger" id="second" data-toggle="modal" href="#">Launch your Test</a>');
+              }
 
             });
 
@@ -51,6 +59,9 @@ $(function() {
         }
     });
   };
+
+
+
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
