@@ -1,5 +1,7 @@
-<%= link_to vote_path(@campaign.picture_a_id) %>
-<%= @campaign.picture_a_id.file %>
+<%= link_to vote_path(@campaign.picture_a_id, method: :post) do %>
+  <%= image_tag @campaign.picture_a_id.file, {id: ""} %>
+<% end %>
 
-<%= link_to vote_path(@campaign.picture_b_id) %>
-<%= @campaign.picture_b_id.file %>
+<%= link_to vote_path(@campaign.picture_b_id, method: :post) do %>
+  <%= image_tag @campaign.picture_b_id.file, {id: ""} %>
+<% end %>
