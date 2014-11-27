@@ -6,4 +6,21 @@ class CampaignController < ApplicationController
   @campaign = @user.next_campaign
  end
 
+ def new
+  @campaign = Campaign.new
+ end
+
+ def create
+  @campaign = current_user.campaigns.new(campaign_params)
+  @campaign.save
+  redirect_to
+ end
+
+private
+
+def campaign_params
+  params.require(:picture_a_id, :picture_b_id, :user_id)
+end
+
+
 end

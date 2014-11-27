@@ -31,7 +31,7 @@ $(function() {
     $('#facebook_photo_selector').facebookPhotoSelector({
         onFinalSelect : function(photos)
         {
-            console.log(photos);
+            $.post( "", { file: photos } );
         }
     });
   };
