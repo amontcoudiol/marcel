@@ -50,7 +50,14 @@ $(function() {
               } else {
                 $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
                 $("#second").hide()
-                $("#select_button").append('<a class="btn btn-lg btn-danger" id="second" data-toggle="modal" href="#">Launch your Test</a>');
+                $("#select_button").append('<%= link_to 'Start voting', campaigns_path(
+                  campaign:{
+                  picture_a_id:' + myPhotos[0].id +
+                  'picture_b_id:' + myPhotos[1].id +
+                  'user_id: current_user.id
+                  }),
+                  method: :post %>
+                ');
               }
 
             });
