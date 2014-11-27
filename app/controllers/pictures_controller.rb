@@ -1,0 +1,20 @@
+class PicturesController < ApplicationController
+ skip_before_action :authenticate_user!
+
+ def create
+   @picture = Picture.create!(photo_params)
+ end
+
+ def show
+ end
+
+ def end
+ end
+
+ private
+
+ def photo_params
+   params.require(:picture).permit(:file)
+ end
+
+end
