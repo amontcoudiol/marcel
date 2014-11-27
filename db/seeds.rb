@@ -6,9 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-a = 0
-b = 0
-c = 0
+
+User.destroy_all
+Vote.destroy_all
+Campaign.destroy_all
+Picture.destroy_all
+
 birthday = "12/11/1975".to_date
 first_names = ["Jack", "Monica", "Jim", "Victoria", "Bill", "Pamela", "Bob", "Scarlett", "Jimi", "Angelina", "David", "Eva", "Barack", "Michelle", "Brad", "Roselyne", "Patrick"]
 pictures = ["http://assets.fiercemarkets.com/files/wireless/fierceimages/jack_dorsey.jpg", "http://www.eyerys.com/sites/default/files/jack_dorsey.jpg",
@@ -29,29 +32,38 @@ pictures = ["http://assets.fiercemarkets.com/files/wireless/fierceimages/jack_do
   "http://www.nilmirum.fr/wp-content/uploads/2014/06/Roselyne-Bachelot-150x150.jpg", "http://static.actustar.com/img/stars/150/24151.jpg",
   "http://i2.wp.com/www.legossip.net/wp-content/uploads/2014/10/Patrick-Sebastien-et-Nabilla-guerre-continue.jpg?resize=150%2C150", "http://www.zicabloc.com/wp-content/uploads/2014/02/patrick-sebastien-on-est-des-dingues-150x150.jpg"]
 
-34.times do
-  Picture.create(file: pictures[b], id: b)
-  b += 1
+pictures_ids = []
+34.times do |b|
+  pic = Picture.create!(file: pictures[b])
+  pictures_ids << pic.id
 end
 
-17.times do
-  Campaign.create(picture_a_id: 2*c, picture_b_id: 2*c + 1, user_id: c, id: c)
-  c += 1
-end
-
-
-17.times do
-  if a.even?
-    User.create(first_name: first_names[a], birthday: birthday, gender: "male", password: "qwertzuiop", email: "yo#{a}@gmail.com", id: a)
+users = []
+17.times do |c|
+  if c.even?
+    user = User.create!(first_name: first_names[c], birthday: birthday, gender: "male", password: "qwertzuiop", email: "yo#{c}@gmail.com")
   else
-    User.create(first_name: first_names[a], birthday: birthday, gender: "female", password: "qwertzuiop", email: "yo#{a}@gmail.com", id: a)
+    user = User.create!(first_name: first_names[c], birthday: birthday, gender: "female", password: "qwertzuiop", email: "yo#{c}@gmail.com")
   end
-  (1..10).to_a.sample.times do
-      campaign_id = (0..16).to_a.sample
-      Vote.create(user_id: a, voted_picture_id: Campaign.find(campaign_id).picture_a_id, campaign_id: campaign_id)
-    end
-  a += 1
+  user.campaigns.create(picture_a_id: pictures_ids[2*c], picture_b_id: pictures_ids[2*c + 1])
+  users << user
   birthday = birthday >> 12
+end
+
+users.each do |u|
+  (1..15).to_a.sample.times do
+    offset = rand(Campaign.count)
+    campaign = Campaign.offset(offset).first
+
+    pic_offset = rand(2)
+    if pic_offset == 0
+      picture_id = campaign.picture_a_id
+    else
+      picture_id = campaign.picture_b_id
+    end
+
+    u.votes.create!(voted_picture_id: picture_id, campaign_id: campaign.id)
+  end
 end
 
 

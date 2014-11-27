@@ -18,6 +18,7 @@
 //= require bootstrap-sprockets
 
 $(function() {
+
  window.fbAsyncInit = function() {
     FB.init({
       appId      : '1540320802851738',
@@ -47,14 +48,14 @@ $(function() {
                 $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
                 $("#select_button").append('<a class="btn btn-lg btn-primary" id="second" data-toggle="modal" href="#facebook_photo_selector">Select Your 2nd Photo</a>');
                 $("#first").hide()
+                $("#campaign_picture_a_id").val(data.file);
               } else {
                 $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
-                $("#second").hide()
-                $("#select_button").append('<a class="btn btn-lg btn-danger" id="second" data-toggle="modal" href="#">Launch your Test</a>');
+                $("#second").hide();
+                $("#campaign_picture_b_id").val(data.file);
+                $("#start_voting_button").show();
               }
-
             });
-
           });
         }
     });

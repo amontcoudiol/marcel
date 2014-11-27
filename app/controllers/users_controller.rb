@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @campaign = Campaign.new
     @user = current_user
     @user.update(target_params)
   end
