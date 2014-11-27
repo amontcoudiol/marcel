@@ -31,7 +31,23 @@ $(function() {
     $('#facebook_photo_selector').facebookPhotoSelector({
         onFinalSelect : function(photos)
         {
-            console.log(photos);
+          console.log(photos);
+
+          var photo_facebook_id = photos[0];
+
+          FB.api(photo_facebook_id, function(response) {
+            var photo_url = response.source;
+
+            $.post("/pictures", { picture: { file: photo_url } }, function(data) {
+              console.log(data.id);
+              $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
+              $('<a class="btn btn-lg btn-primary" id="second" data-toggle="modal" href="#facebook_photo_selector">Select Your 2nd Photo</a>').appendTo("#select_button");
+              $("#first").hide()
+
+
+            });
+
+          });
         }
     });
   };
