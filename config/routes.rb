@@ -6,8 +6,16 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :campaigns
-  resources :votes
+  resources :campaigns do
+    resources :votes
+  end
+
+  resources :votes, only: [] do
+    collection do
+      get :next
+    end
+  end
+
   resources :pictures
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
