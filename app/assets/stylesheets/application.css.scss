@@ -14,8 +14,19 @@
  *= require_self
  */
 
+
+$headings-font-family: Chalet;
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+h1 {
+   text-align: center;
+   padding-bottom: 60px;
+}
 
 
 /* facebook photo picker */
@@ -34,7 +45,6 @@
 #start_voting_button {
   display:none;
 }
-
 /* home */
 
 #banner {
