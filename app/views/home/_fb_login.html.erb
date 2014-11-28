@@ -1,0 +1,10 @@
+
+<% if user_signed_in? %>
+ <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+ <br/>
+
+<% else %>
+   <%= link_to user_omniauth_authorize_path(:facebook) do %>
+     <%= image_tag("http://i.stack.imgur.com/ZW4QC.png", :class => "fb_login") %>
+  <% end %>
+<% end %>

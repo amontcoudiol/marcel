@@ -27,5 +27,10 @@ class User < ActiveRecord::Base
     user
   end
 
+  def targets
+    User.where(gender: target_gender)
+        .where("birthday >= ?", Time.now - target_max_age.years - 1.years)
+        .where("birthday <= ?", Time.now - target_min_age.years)
+  end
 
 end

@@ -1,22 +1,8 @@
 <% content_for(:title) do %>
-   Home
+  Tinder Genius | Home
 <% end %>
 
-<h1> Tinder Genius </h1>
-
-
-<img src="http://img4.hostingpics.net/pics/222751tglogo1.jpg">
-
-</br>
-
-<% if user_signed_in? %>
- <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
- <br/>
-
-<% else %>
- <%= link_to "Connect with Facebook", user_omniauth_authorize_path(:facebook) %>
-<% end %>
-
-
-
-
+<div id="banner" text-center>
+  <h1>Find your best side.</h1>
+  <%= render 'fb_login' %>
+</div>
