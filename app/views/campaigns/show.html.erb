@@ -1,17 +1,17 @@
 <%= link_to votes_path(
-  vote:{
-  voted_picture_id: @campaign.picture_a_id,
-  user_id: current_user.id,
-  campaign_id: @campaign.id}),
-  method: :post do %>
-  <%= image_tag Picture.find(@campaign.picture_a_id).file %>
+ vote:{
+ voted_picture_id: @campaign.picture_a_id,
+ user_id: current_user.id,
+ campaign_id: @campaign.id}),
+ method: :post do %>
+ <%= image_tag Picture.find(@campaign.picture_a_id).file %>
 <% end %>
 
 <%= link_to votes_path(
-  vote:{
-  voted_picture_id: @campaign.picture_b_id,
-  user_id: current_user.id,
-  campaign_id: @campaign.id}),
-  method: :post do %>
-  <%= image_tag Picture.find(@campaign.picture_b_id).file %>
+ vote:{
+ voted_picture_id: @campaign.picture_b_id,
+ user_id: current_user.id,
+ campaign_id: @campaign.id}),
+ method: :post do %>
+ <%= image_tag Picture.find(@campaign.picture_b_id).file %>
 <% end %>
