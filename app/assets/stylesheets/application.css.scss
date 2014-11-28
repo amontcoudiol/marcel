@@ -19,6 +19,7 @@
 
 
 /* facebook photo picker */
+
 .thumbnail.selected {
     background-color: #428bca;
 }
@@ -32,4 +33,29 @@
 
 #start_voting_button {
   display:none;
+}
+
+/* home */
+
+#banner {
+  text-align: center;
+  background-image: url(http://gratisography.com/pictures/83_1.jpg);
+  background-size: cover;
+  background-position: center;
+  // background-attachment: fixed;
+  background-repeat: no-repeat !important;
+  padding-top: 150px;
+  width:100%;
+}
+
+#banner h1 {
+  font-family: pacifico;
+  font-size: 80px;
+  color: white;
+  text-shadow: 0 0 20px rgba(0, 0, 0, .8);
+  margin-bottom: 250px;
+}
+
+.fb_login {
+  margin-bottom: 150px;
 }
