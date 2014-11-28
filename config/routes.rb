@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :users
+  resources :profiles do
+    member do
+      get 'target'
+    end
+  end
+
   resources :campaigns
   resources :votes
   resources :pictures
-
-  get "start_voting/" => "campaigns#start_voting", as: :start_voting
-  get 'target/' => 'users#target', as: :target
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: "home#index"

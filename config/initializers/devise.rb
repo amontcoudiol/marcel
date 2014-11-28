@@ -257,6 +257,6 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
-  :scope => 'user_birthday,user_photos'
+  :scope => 'email,user_birthday,user_photos'
 
 end
