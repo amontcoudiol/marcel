@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 20141201143541) do
     t.string   "last_name"
     t.string   "gender"
     t.string   "email"
-    t.string   "token"
     t.datetime "token_expiry"
     t.date     "birthday"
+    t.text     "token"
     t.text     "fb_access_token"
   end
 
