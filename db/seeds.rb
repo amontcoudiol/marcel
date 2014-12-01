@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require "SecureRandom"
+
 
 User.destroy_all
 Vote.destroy_all
@@ -51,8 +53,11 @@ users = []
 end
 
 users.each do |u|
+  offsets = (1...Campaign.count).to_a
+
   (1..15).to_a.sample.times do
-    offset = rand(Campaign.count)
+    offset = offsets.sample
+    offsets.delete(offset)
     campaign = Campaign.offset(offset).first
 
     pic_offset = rand(2)

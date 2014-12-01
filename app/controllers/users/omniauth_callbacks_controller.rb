@@ -3,7 +3,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
    user = User.find_for_facebook_oauth(request.env["omniauth.auth"])
 
    if user.persisted?
-     sign_in_and_redirect user, event: :authentication
+     sign_in user
+     if user.target_gender && user.target_min_age && user.target_max_age && user.city
+        redirect_to results_path
+     else
+        redirect_to target_profile_path(user.id)
+     end
      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
    else
      session["devise.facebook_data"] = request.env["omniauth.auth"]
@@ -12,3 +17,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
    end
  end
 end
+
+
+
+   # if user.persisted?
+   #   sign_in user
+   #   redirect_to next_votes_path
+   #   set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
