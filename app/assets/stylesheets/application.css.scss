@@ -24,8 +24,7 @@ $body-bg: #FCFCFC;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import url(http://fonts.googleapis.com/css?family=Lobster);
-
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
 h1 {
    text-align: center;
    padding-bottom: 60px;
@@ -54,7 +53,7 @@ h1 {
   background-image: url(2.jpg);
   background-size: cover;
   background-position: center;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   background-repeat: no-repeat !important;
   padding-top: 0px;
   width:100%;
@@ -62,7 +61,7 @@ h1 {
 
 #banner h1 {
   text-align: center;
-  font-family: Lobster, Verdana;
+  font-family: Montserrat, Verdana;
   font-size: 70px;
   color: white;
   text-shadow: 0 0 20px rgba(0, 0, 0, .8);
@@ -87,3 +86,4 @@ h1 {
 #select_button {
   text-align: center;
 }
+
