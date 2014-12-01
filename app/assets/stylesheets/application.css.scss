@@ -15,8 +15,10 @@
  */
 
 
-$headings-font-family: Chalet;
+$headings-font-family: Helvetica;
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-color: #FF7258;
+$body-bg: #FCFCFC;
 
 
 @import "bootstrap-sprockets";
@@ -49,7 +51,7 @@ h1 {
 
 #banner {
   text-align: center;
-  background-image: url(http://gratisography.com/pictures/83_1.jpg);
+  background-image: url(83h.jpg);
   background-size: cover;
   background-position: center;
   // background-attachment: fixed;
@@ -68,4 +70,8 @@ h1 {
 
 .fb_login {
   margin-bottom: 150px;
+}
+
+#select_button {
+  text-align: center;
 }
