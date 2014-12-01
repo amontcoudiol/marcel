@@ -24,6 +24,7 @@ $body-bg: #FCFCFC;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 
 h1 {
    text-align: center;
@@ -61,11 +62,12 @@ h1 {
 }
 
 #banner h1 {
-  font-family: pacifico;
-  font-size: 80px;
+  font-family: Lobster, Verdana;
+  font-size: 70px;
   color: white;
   text-shadow: 0 0 20px rgba(0, 0, 0, .8);
   margin-bottom: 250px;
+  padding-top: 100px;
 }
 
 .fb_login {
