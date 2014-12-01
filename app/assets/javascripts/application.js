@@ -48,11 +48,11 @@ $(function() {
                 $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
                 $("#select_button").append('<a class="btn btn-lg btn-primary" id="second" data-toggle="modal" href="#facebook_photo_selector">Select Your 2nd Photo</a>');
                 $("#first").hide()
-                $("#campaign_picture_a_id").val(data.file);
+                $("#campaign_picture_a_id").val(data.id);
               } else {
                 $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
                 $("#second").hide();
-                $("#campaign_picture_b_id").val(data.file);
+                $("#campaign_picture_b_id").val(data.id);
                 $("#start_voting_button").show();
               }
             });
