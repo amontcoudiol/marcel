@@ -47,8 +47,7 @@ $(function() {
               if (myPhotos.length === 1) {
                 $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
                 $("#select_button").append('<div><a class="btn btn-lg btn-primary" id="second" data-toggle="modal" href="#facebook_photo_selector">Select Your 2nd Photo</a></div>');
-
-                $('#first').addClass('animated bounceOutLeft');
+                $("#first").hide()
                 $("#campaign_picture_a_id").val(data.id);
               } else {
                 $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
