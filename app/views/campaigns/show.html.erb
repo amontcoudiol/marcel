@@ -18,7 +18,7 @@
           },
           campaign_id: @campaign.id),
           method: :post do %>
-          <%= image_tag Picture.find(@campaign.picture_a_id).file %>
+          <%= image_tag (Picture.find(@campaign.picture_a_id).file), size: "300x300" %>
         <% end %>
       </div>
     </div>
@@ -30,7 +30,7 @@
             },
             campaign_id: @campaign.id),
             method: :post do %>
-            <%= image_tag Picture.find(@campaign.picture_b_id).file %>
+            <%= image_tag (Picture.find(@campaign.picture_b_id).file), size: "300x300" %>
           <% end %>
         </div>
     </div>
