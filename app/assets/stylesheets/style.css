@@ -2,9 +2,12 @@
   position: relative;
   z-index: 10;
   /*width: 22%;*/
-  float: left;
   margin: 20px;
+  margin: auto;
+  width: 300px;
 }
+
+
 .stack img {
   max-width: 300px;
   height: auto;
