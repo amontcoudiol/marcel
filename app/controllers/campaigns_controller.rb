@@ -21,6 +21,17 @@ class CampaignsController < ApplicationController
     end
   end
 
+  def finish
+    @campaign.status = false
+  end
+
+  def results
+    @campaign = current_user.campaigns.where(status: true).first
+  end
+
+  def come_back_later
+  end
+
   private
 
   def campaign_params

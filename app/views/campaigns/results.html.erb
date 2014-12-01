@@ -1,0 +1,22 @@
+<% if @campaign.votes.length > 5 %>
+
+  Your results are :
+  <%= image_tag Picture.find(@campaign.picture_a_id).file %><br/>
+  <%= 100*(@campaign.votes.where(voted_picture_id: 1).length)/@campaign.votes.length %>%.<br/><br/>
+  <%= image_tag Picture.find(@campaign.picture_b_id).file %><br/>
+  <%= 100*(@campaign.votes.where(voted_picture_id: 2).length)/@campaign.votes.length %>%.<br/><br/>
+  Share Tinder Genius with your friends:
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.tindergenius.com" data-text="What picture should you use on Tinder? @Tinder_Genius gives you the answer:" data-size="large" data-count="none">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <iframe src="//www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.tindergenius.com&amp;layout=button&amp;appId=1397748350517057" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowTransparency="true"></iframe>
+
+<% else %>
+
+  Your results are not ready yet! <%= 5 - @campaign.votes.length %> people still need to give their advice to ensure the reliability of the test! :) <br/>
+  Get your results faster: <%= link_to "Vote more", next_votes_path %><br/><br/>
+  Share Tinder Genius with your friends:
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.tindergenius.com" data-text="What picture should you use on Tinder? @Tinder_Genius gives you the answer:" data-size="large" data-count="none">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <iframe src="//www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.tindergenius.com&amp;layout=button&amp;appId=1397748350517057" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowTransparency="true"></iframe>
+
+<% end %>

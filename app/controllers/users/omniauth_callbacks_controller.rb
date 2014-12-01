@@ -12,3 +12,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
    end
  end
 end
+
+
+
+   # if user.persisted?
+   #   sign_in user
+   #   redirect_to next_votes_path
+   #   set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?

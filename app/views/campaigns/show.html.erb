@@ -15,3 +15,13 @@
   method: :post do %>
   <%= image_tag Picture.find(@campaign.picture_b_id).file %>
 <% end %>
+
+<br/>
+You voted <%= current_user.votes.length %> time(s).
+<br/>
+
+<% if current_user.votes.length > 5 %>
+ <%= link_to 'Done', results_path %>
+<% else %>
+Only <%= 5 - current_user.votes.length %> votes left !
+<% end %>

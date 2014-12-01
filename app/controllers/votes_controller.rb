@@ -7,7 +7,7 @@ class VotesController < ApplicationController
     if campaign
       redirect_to campaign_path(campaign)
     else
-      redirect_to root_path
+      redirect_to come_back_later_path
     end
   end
 
