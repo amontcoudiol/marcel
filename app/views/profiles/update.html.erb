@@ -3,14 +3,15 @@
 
 
 <div class="text-center" id="select_button">
-<a class="btn btn-lg btn-primary" id="first" data-toggle="modal" href="#facebook_photo_selector">Select Your 1st Photo</a>
+  <a class="btn btn-lg btn-primary" id="first" data-toggle="modal" href="#facebook_photo_selector">Select Your 1st Photo</a>
+  </br>
 </div>
 
 
 <%= form_for(@campaign, html: { id: "start_voting_button"}) do |f| %>
   <%= f.hidden_field :picture_a_id %>
   <%= f.hidden_field :picture_b_id %>
-  <%= f.submit "Start Voting" %>
+  <%= f.submit "Start Voting", class: "btn btn-danger btn-lg text-center col-xs-2 col-xs-offset-5" %>
 <% end %>
 
 

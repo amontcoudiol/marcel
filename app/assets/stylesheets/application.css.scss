@@ -18,6 +18,7 @@
 $headings-font-family: Helvetica;
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headings-color: #FF7258;
+$body-bg: #FCFCFC;
 
 
 @import "bootstrap-sprockets";
@@ -69,4 +70,8 @@ h1 {
 
 .fb_login {
   margin-bottom: 150px;
+}
+
+#select_button {
+  text-align: center;
 }

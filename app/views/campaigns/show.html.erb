@@ -1,17 +1,55 @@
-<%= link_to campaign_votes_path(
-  vote: {
-    voted_picture_id: @campaign.picture_a_id
-  },
-  campaign_id: @campaign.id),
-  method: :post do %>
-  <%= image_tag Picture.find(@campaign.picture_a_id).file %>
+<% content_for(:title) do %>
+   Vote
 <% end %>
 
-<%= link_to campaign_votes_path(
-  vote: {
-    voted_picture_id: @campaign.picture_b_id,
-  },
-  campaign_id: @campaign.id),
-  method: :post do %>
-  <%= image_tag Picture.find(@campaign.picture_b_id).file %>
-<% end %>
+<h1> <strong>Which one do you prefer?</strong> </h1>
+
+</br>
+</br>
+</br>
+</br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-6 col-sm-offset-4">
+      <div class="stack twisted ">
+        <%= link_to campaign_votes_path(
+          vote: {
+            voted_picture_id: @campaign.picture_a_id
+          },
+          campaign_id: @campaign.id),
+          method: :post do %>
+          <%= image_tag Picture.find(@campaign.picture_a_id).file %>
+        <% end %>
+      </div>
+    </div>
+      <div class="col-xs-offset-6 col-sm-offset-4">
+        <div class="stack twisted ">
+          <%= link_to campaign_votes_path(
+            vote: {
+              voted_picture_id: @campaign.picture_b_id,
+            },
+            campaign_id: @campaign.id),
+            method: :post do %>
+            <%= image_tag Picture.find(@campaign.picture_b_id).file %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div class="progress">
+  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    <span class="sr-only">80% Complete (danger)</span>
+  </div>
+</div>
