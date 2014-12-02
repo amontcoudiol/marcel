@@ -15,19 +15,29 @@
  */
 
 
-$headings-font-family: Helvetica;
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$headings-color: #FF7258;
-$body-bg: #FCFCFC;
+$headings-font-family: Source Sans Pro, Montserrat, Verdana;
+$font-family-sans-serif: Lato, Verdana, Arial, sans-serif;
+$headings-color: white;
+$body-bg: #7AC6DB;
+$text-color: #333333;
+$btn-danger-bg: #EB664D;
+$btn-primary-bg: #2E6E93;
+$progress-bar-danger-bg: #EB664D;
 
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+
 h1 {
    text-align: center;
    padding-bottom: 60px;
+   font-weight: bold;
+
 }
 
 
@@ -50,40 +60,61 @@ h1 {
 /* home */
 
 #banner {
-  background-image: image-url("2.jpg");
+  background-image: image-url("homessc.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat !important;
   padding-top: 0px;
   width:100%;
+  @media (max-width: $screen-xs-max) {
+    background-image: image-url("homesm.jpg");
+  }
 }
 
 #banner h1 {
   text-align: center;
-  font-family: Montserrat, Verdana;
+  font-family: Source Sans Pro, Verdana;
   font-size: 70px;
   color: white;
   text-shadow: 0 0 20px rgba(0, 0, 0, .8);
-  margin-bottom: 250px;
-  padding-top: 30px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+#banner p {
+  text-align: center;
+  padding-bottom: 250px;
+  color: white;
+  font-size: 15px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, .8);
 }
 
 #banner #logo {
   text-align: left;
   height: 200px;
   width: 200px;
+
 }
 
 #banner #fbbut {
   text-align: center;
+  position: absolute bottom;
+  color: white;
+  text-shadow: 0 0 20px rgba(0, 0, 0, .8);
 }
 
 .fb_login {
-  margin-bottom: 150px;
+  margin-bottom: 10px;
 }
 
 #select_button {
   text-align: center;
 }
 
+.picture-wrapper {
+  background-color: white;
+  max-height: 100%;
+  }

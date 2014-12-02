@@ -4,23 +4,25 @@
 
 <h1 >What are you looking for? </h1>
 
-
-<%= bootstrap_form_for(@user, :url => profile_path(current_user.id),layout: :horizontal, label_col: "col-xs-4", control_col: "col-xs-4") do |f| %>
-
-
-  <%= f.select :target_gender, [["female"],["male"]]%>
+<div class="col-md-12 text-center">
+  <%= bootstrap_form_for(@user, :url => profile_path(current_user.id),layout: :horizontal, label_col: "col-xs-4", control_col: "col-xs-4") do |f| %>
 
 
-  <%= f.number_field :target_min_age, min: 18 %>
+    <%= f.select :target_gender, [["female"],["male"]]%>
 
 
-  <%= f.number_field :target_max_age, min: 18 %>
+    <%= f.number_field :target_min_age, min: 13, placeholder: "18" %>
 
 
-  <%= f.text_field :city %>
+    <%= f.number_field :target_max_age, min: 18, placeholder: "99" %>
+
+
+    <%= f.text_field :city, placeholder: "Paris" %>
 
   </br>
-  <%= f.submit 'Next', class: "btn btn-danger btn-lg text-center col-xs-2 col-xs-offset-5" %>
+
+  <%= f.submit 'Next', class: "btn btn-danger btn-lg " %>
+</div>
   </br>
   </br>
 <% end %>

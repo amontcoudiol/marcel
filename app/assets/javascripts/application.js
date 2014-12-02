@@ -18,6 +18,15 @@
 //= require bootstrap-sprockets
 
 $(function() {
+  // Resize the page
+
+  if($('#banner')){
+    $(window).on('resize',function(){
+      $("#banner").height($(this).height());
+    })
+  }
+
+
 
  window.fbAsyncInit = function() {
     FB.init({
@@ -45,12 +54,12 @@ $(function() {
               myPhotos.push(data);
 
               if (myPhotos.length === 1) {
-                $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
+                $('<div class="col-md-offset-3 col-md-3"><a href="#" class="picture-wrapper thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
                 $("#select_button").append('<div><a class="btn btn-lg btn-primary" id="second" data-toggle="modal" href="#facebook_photo_selector">Select Your 2nd Photo</a></div>');
                 $("#first").hide()
                 $("#campaign_picture_a_id").val(data.id);
               } else {
-                $('<div class="col-md-3"><a href="#" class="thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
+                $('<div class="col-md-3"><a href="#" class="picture-wrapper thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
                 $("#second").hide();
                 $("#campaign_picture_b_id").val(data.id);
                 $("#start_voting_button").show();
