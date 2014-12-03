@@ -11,7 +11,7 @@
 <%= form_for(@campaign, html: { id: "start_voting_button"}) do |f| %>
   <%= f.hidden_field :picture_a_id %>
   <%= f.hidden_field :picture_b_id %>
-  <%= f.submit "Start Voting", class: "btn btn-danger btn-lg text-center col-xs-2 col-xs-offset-5" %>
+  <input name="commit" type="submit" value="Run the test, <%= current_user.first_name %>!" class="btn btn-danger btn-lg text-center col-xs-2 col-xs-offset-5" />
 <% end %>
 
 
