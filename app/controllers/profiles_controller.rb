@@ -22,7 +22,10 @@ class ProfilesController < ApplicationController
   def update
     @campaign = Campaign.new
     @user = current_user
-    @user.update(target_params)
+    if @user.update(target_params)
+    else
+      render :target
+    end
   end
 
   def destroy

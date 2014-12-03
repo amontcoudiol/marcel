@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [ :facebook ]
   has_many :votes
   has_many :campaigns, dependent: :destroy
+  validates_presence_of :target_gender, on: :update
+  validates_presence_of :target_max_age, on: :update
+  validates_presence_of :target_min_age, on: :update
+  validates_presence_of :city, on: :update
 
   def self.find_for_facebook_oauth(auth)
     user = self.where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
