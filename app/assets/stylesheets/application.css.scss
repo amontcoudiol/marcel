@@ -32,7 +32,6 @@ $progress-bar-danger-bg: #EB664D;
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @import url(http://fonts.googleapis.com/css?family=Lato);
 
-
 h1 {
    text-align: center;
    padding-bottom: 60px;
@@ -178,6 +177,13 @@ h1 {
     font-size: 15px;
     text-shadow: 0 0 20px rgba(0, 0, 0, .8);
   }
+
+  h1 {
+     text-align: center;
+     padding-bottom: 30px;
+     font-weight: bold;
+  }
+
 }
 
 

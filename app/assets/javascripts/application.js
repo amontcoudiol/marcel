@@ -16,6 +16,7 @@
 //= require_tree .
 //= require facebookphotoselector.jquery
 //= require bootstrap-sprockets
+//= require bootstrap-slider.min.js
 
 $(function() {
   // Resize the page
@@ -28,6 +29,19 @@ $(function() {
     })
   }
   resize();
+
+  // Slider
+  if($("#slide")){
+    $("#slide").slider({
+      value : [ parseInt($('.min-age').val() || 18),parseInt($('.max-age').val() || 77) ]
+    })
+    .on('change',function (e) {
+      var value = $(this).val().split(',');
+      $('.min-age').val(value[0]);
+      $('.max-age').val(value[1]);
+    });
+  }
+
 
 
  window.fbAsyncInit = function() {

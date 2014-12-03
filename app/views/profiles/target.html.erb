@@ -13,11 +13,18 @@
 
         <%= f.select :target_gender, [["female"],["male"]]%>
 
+        <div class="form-group">
+          <label for="slide" class="control-label col-sm-4">Age Range </label>
+          <div class="col-sm-4">
+            <input id="slide" type="text" class="span2 " value="" data-slider-min="18" data-slider-max="77" data-slider-step="1" />
+          </div>
+        </div>
 
-        <%= f.number_field :target_min_age, min: 13, placeholder: "17" %>
+
+        <%= f.hidden_field :target_min_age, min: 13, placeholder: "17", class: "min-age" %>
 
 
-        <%= f.number_field :target_max_age, min: 18, placeholder: "77" %>
+        <%= f.hidden_field :target_max_age, min: 18, placeholder: "77", class: "max-age" %>
 
 
         <%= f.text_field :city, placeholder: "Paris" %>
@@ -31,4 +38,5 @@
 </div>
   </br>
   </br>
+
 <% end %>
