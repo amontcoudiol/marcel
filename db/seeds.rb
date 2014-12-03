@@ -55,7 +55,7 @@ end
 users.each do |u|
   offsets = (1...Campaign.count).to_a
 
-  (1..15).to_a.sample.times do
+  (1..3).to_a.sample.times do
     offset = offsets.sample
     offsets.delete(offset)
     campaign = Campaign.offset(offset).first

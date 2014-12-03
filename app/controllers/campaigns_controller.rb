@@ -26,7 +26,7 @@ class CampaignsController < ApplicationController
   end
 
   def results
-    @campaign = current_user.campaigns.where(status: true).first
+    @campaign = current_user.campaigns.first
   end
 
   def come_back_later
