@@ -1,0 +1,57 @@
+<h1>Your results are not ready yet!</h1>
+
+<div class="progress-pie-chart" data-percent="<%= (((@campaign.votes.length + 1) / 6.0) * 100) %>">
+  <div class="ppc-progress">
+    <div class="ppc-progress-fill"></div>
+  </div>
+  <div class="ppc-percents">
+    <div class="pcc-percents-wrapper">
+      <span>%</span>
+    </div>
+  </div>
+</div>
+
+<br/>
+<div class="text-under-title text-center" style="font-family: Source Sans Pro">
+  <%= 5 - @campaign.votes.length %>
+  <% if current_user.target_gender == "male" %>
+    men
+  <% else %>
+    women
+  <% end %>
+  still need to vote on your pictures to ensure the reliability of the test! :)
+</div>
+<br/>
+
+<div class="text-under-title text-center" style="font-family: Source Sans Pro">
+  To get your results faster:
+</div>
+<br/>
+
+<div class="text-center">
+
+  <%= link_to next_votes_path, class: "btn btn-info btn-lg" do %>
+      <i class="fa fa-bolt"></i><strong> Vote more!</strong>
+  <% end %>
+
+  <a href="#" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://tindergenius.com','test','toolbar=0, status=0, top=300, left=500, width=500, height=400');return false" class="btn btn-warning btn-lg button-text">
+    <i class="fa fa-facebook-square" style="color: white"></i><strong> Share</strong>
+  </a>
+
+  <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flocalhost%3A3000%2Fcome_back_later&amp;text=What%20picture%20should%20you%20use%20on%20Tinder%3F%20%40Tinder_Genius%20gives%20you%20the%20answer%3A&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.tindergenius.com" class="btn btn-success btn-lg button-text">
+    <i class="fa fa-twitter" style="color: #139ae9"></i><strong style="color: #333333"> Tweet</strong>
+  </a>
+
+</div>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+<!--
+<i class="fa fa-bolt"></i><%= link_to "Vote more", next_votes_path %>
+
+
+<a target="blank" href="https://www.google.com/maps?q=mojitos+near+<%= current_user.city.gsub(/\s/,'+').gsub(/\,/,'+') %>" class="btn btn-info btn-lg">
+          <i style="color: white" class="button-text"></i><i class="fa fa-thumbs-up"></i><strong> Oh yeah!</strong>
+        </a> -->

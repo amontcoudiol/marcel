@@ -5,7 +5,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
    if user.persisted?
      sign_in user
      if user.target_gender && user.target_min_age && user.target_max_age && user.city
-        redirect_to results_path
+        if user.campaigns.first
+          redirect_to results_path
+        else
+          redirect_to profile_path(user.id)
+        end
      else
         redirect_to target_profile_path(user.id)
      end

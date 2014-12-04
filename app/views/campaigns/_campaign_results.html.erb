@@ -1,0 +1,5 @@
+    <h1> <strong>Your results</strong> </h1>
+    <%= image_tag Picture.find(@campaign.picture_a_id).file %><br/>
+    <%= 100*(@campaign.votes.where(voted_picture_id: @campaign.picture_a_id).length)/@campaign.votes.length %>%.<br/><br/>
+    <%= image_tag Picture.find(@campaign.picture_b_id).file %><br/>
+    <%= 100*(@campaign.votes.where(voted_picture_id: @campaign.picture_b_id).length)/@campaign.votes.length %>%.<br/><br/>
