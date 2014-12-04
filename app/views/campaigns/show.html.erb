@@ -39,9 +39,17 @@
 
 <div id="prog" class="text-center">
   <% if current_user.votes.length > 4 %>
-    <%= link_to 'Done', finish_voting_path %>
-  <% else %>
-    Only <%= 5 - current_user.votes.length %> votes left !
+   <div class="text-votes">
+     Continue voting: the more you vote, the faster you'll get your results!<br/>
+     (<%= current_user.votes.length %> votes)
+   </div>
+ <br/>
+   <%= link_to 'Done', finish_voting_path %>
+ <% else %>
+   <div class="text-votes">
+     Only <%= 5 - current_user.votes.length %> votes left !
+   </div>
+    <br/>
     <br/>
     <div class="progress">
       <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: <%= ((current_user.votes.length + 1) / 6.0) * 100 %>%">
