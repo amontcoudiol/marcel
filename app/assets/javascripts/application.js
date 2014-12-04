@@ -16,14 +16,69 @@
 //= require_tree .
 //= require facebookphotoselector.jquery
 //= require bootstrap-sprockets
+//= require bootstrap-slider.js
 
 $(function() {
   // Resize the page
-
+  var resize = function (argument) {
+    $("#banner").height($(this).height());
+  }
   if($('#banner')){
     $(window).on('resize',function(){
-      $("#banner").height($(this).height());
+      resize();
     })
+  }
+  resize();
+
+
+  $(window).load(function(){
+    if ($(window).width() <= 480){
+      if($('#pic1')){
+        $('#pic1').removeClass( "stack twisted" )
+      }
+      if($('#pic2')){
+        $('#pic2').removeClass( "stack twisted" )
+      }
+    }
+  });
+
+   $(window).resize(function(){
+    if ($(window).width() <= 480){
+      if($('#pic1')){
+        $('#pic1').removeClass( "stack twisted" )
+      }
+    }
+    else {
+      if($('#pic1')){
+        $('#pic1').addClass( "stack twisted" )
+      }
+    }
+  });
+
+  $(window).resize(function(){
+    if ($(window).width() <= 480){
+      if($('#pic2')){
+        $('#pic2').removeClass( "stack twisted" )
+      }
+    }
+    else {
+      if($('#pic2')){
+        $('#pic2').addClass( "stack twisted" )
+      }
+    }
+  });
+
+
+  // Slider
+  if($("#slide")){
+    $("#slide").slider({
+      value : [ parseInt($('.min-age').val() || 18),parseInt($('.max-age').val() || 77) ]
+    });
+    $("#slide").on('change',function (e) {
+      var value = $(this).val().split(',');
+      $('.min-age').val(value[0]);
+      $('.max-age').val(value[1]);
+    });
   }
 
 
@@ -55,7 +110,7 @@ $(function() {
 
               if (myPhotos.length === 1) {
                 $('<div class="col-md-offset-3 col-md-3"><a href="#" class="picture-wrapper thumbnail" data-facebook-id="' + photos + '"><img src="' + data.file + '" alt="' + photos + '""></a></div>').appendTo("#select_button");
-                $("#select_button").append('<div><a class="btn btn-lg btn-primary" id="second" data-toggle="modal" href="#facebook_photo_selector">Select Your 2nd Photo</a></div>');
+                $("#select_button").append('<div><a class=" btn btn-lg btn-primary " id="second" data-toggle="modal" href="#facebook_photo_selector">Select Your 2nd Photo</a></div>');
                 $("#first").hide()
                 $("#campaign_picture_a_id").val(data.id);
               } else {
