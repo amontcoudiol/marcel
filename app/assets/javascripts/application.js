@@ -30,8 +30,47 @@ $(function() {
   }
   resize();
 
+
+  $(window).load(function(){
+    if ($(window).width() <= 480){
+      if($('#pic1')){
+        $('#pic1').removeClass( "stack twisted" )
+      }
+      if($('#pic2')){
+        $('#pic2').removeClass( "stack twisted" )
+      }
+    }
+  });
+
+   $(window).resize(function(){
+    if ($(window).width() <= 480){
+      if($('#pic1')){
+        $('#pic1').removeClass( "stack twisted" )
+      }
+    }
+    else {
+      if($('#pic1')){
+        $('#pic1').addClass( "stack twisted" )
+      }
+    }
+  });
+
+  $(window).resize(function(){
+    if ($(window).width() <= 480){
+      if($('#pic2')){
+        $('#pic2').removeClass( "stack twisted" )
+      }
+    }
+    else {
+      if($('#pic2')){
+        $('#pic2').addClass( "stack twisted" )
+      }
+    }
+  });
+
+
   // Slider
-  if($("#slide")){
+  /*if($("#slide")){
     $("#slide").slider({
       value : [ parseInt($('.min-age').val() || 18),parseInt($('.max-age').val() || 77) ]
     })
@@ -40,7 +79,7 @@ $(function() {
       $('.min-age').val(value[0]);
       $('.max-age').val(value[1]);
     });
-  }
+  }*/
 
 
 
