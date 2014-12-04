@@ -32,7 +32,7 @@ pictures = ["http://assets.fiercemarkets.com/files/wireless/fierceimages/jack_do
   "http://cdn.factcheck.org/UploadedFiles/2013/12/MObama.jpg", "http://www.jammiewf.com/assets/moboxing11-150x150.jpg",
   "http://www.thelawinsider.com/wp-content/uploads/2010/08/brad_pitt-tiger-150x150.jpg", "http://www.tuxboard.com/photos/2014/10/Brad-Pitt-150x150.jpg",
   "http://www.nilmirum.fr/wp-content/uploads/2014/06/Roselyne-Bachelot-150x150.jpg", "http://static.actustar.com/img/stars/150/24151.jpg",
-  "http://i2.wp.com/www.legossip.net/wp-content/uploads/2014/10/Patrick-Sebastien-et-Nabilla-guerre-continue.jpg?resize=150%2C150", "http://www.zicabloc.com/wp-content/uploads/2014/02/patrick-sebastien-on-est-des-dingues-150x150.jpg"]
+  "http://i2.wp.com/www.legossip.net/wp-content/uploads/2014/10/Patrick-Sebastien-et-Nabilla-guerre-continue.jpg?resize=150%2C150", "http://img4.wikia.nocookie.net/__cb20130404151002/desencyclopedie/images/c/ca/Seb.jpg"]
 
 pictures_ids = []
 34.times do |b|

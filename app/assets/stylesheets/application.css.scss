@@ -247,6 +247,11 @@ $size: 200px;
   width: 100%;
 }
 
+#prog {
+    padding-bottom: 0px;
+    padding-top: 125px;
+  }
+
 
 @media screen and (max-width: $screen-xs) {
   #banner #logo {
@@ -289,15 +294,28 @@ $size: 200px;
   }
 
   #pic1 img{
-    height: 150px;
-    width: 150px;
+    height: 220px;
+    width: 220px;
     border: 3px white solid;
+  }
+
+  #pic1 {
+    padding-bottom: 5px;
   }
 
   #pic2 img{
-    height: 150px;
-    width: 150px;
+    height: 220px;
+    width: 220px;
     border: 3px white solid;
   }
 
+  #titleup {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  #prog {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
 }

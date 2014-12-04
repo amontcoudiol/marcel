@@ -5,11 +5,19 @@
 section {
      background-color: #FC6E51;
 }
+
+section #logo {
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  padding-bottom: 0px;
+}
+
 #action {
     margin: 0 auto;
     width: 700px;
     position: relative;
-    height: 300px;
+    height: 250px;
 
 }
 
