@@ -4,6 +4,11 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    if current_user.target_gender && current_user.target_min_age && current_user.target_max_age && current_user.city && current_user.campaigns.first
+        redirect_to results_path
+    else
+      redirect_to target_profile_path(current_user.id)
+    end
   end
 
   def new
