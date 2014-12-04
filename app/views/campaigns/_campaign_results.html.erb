@@ -1,5 +1,45 @@
-    <h1> <strong>Your results</strong> </h1>
-    <%= image_tag Picture.find(@campaign.picture_a_id).file %><br/>
-    <%= 100*(@campaign.votes.where(voted_picture_id: @campaign.picture_a_id).length)/@campaign.votes.length %>%.<br/><br/>
-    <%= image_tag Picture.find(@campaign.picture_b_id).file %><br/>
-    <%= 100*(@campaign.votes.where(voted_picture_id: @campaign.picture_b_id).length)/@campaign.votes.length %>%.<br/><br/>
+<h1> <strong>Your results</strong> </h1>
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-10 col-xs-offset-1 col-md-offset-1 col-md-5">
+      <div class="text-center">
+        <div class="text-block" style="padding-bottom:0px;">
+          <%= image_tag Picture.find(@campaign.picture_a_id).file,  :class => "picture-results" %><br/>
+          <h1 style="padding-bottom:0px;"><%= 100*(@campaign.votes.where(voted_picture_id: @campaign.picture_a_id).length)/@campaign.votes.length %>%<h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-10 col-md-5">
+      <div class="text-center">
+        <div class="text-block"  style="padding-bottom:0px;">
+          <%= image_tag Picture.find(@campaign.picture_b_id).file, :class => "picture-results" %><br/>
+          <h1 style="padding-bottom:0px;"><%= 100*(@campaign.votes.where(voted_picture_id: @campaign.picture_b_id).length)/@campaign.votes.length %>%</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="text-center">
+
+  <a href="#" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://tindergenius.com','test','toolbar=0, status=0, top=300, left=500, width=500, height=400');return false" class="btn btn-warning btn-lg button-text">
+    <i class="fa fa-facebook-square" style="color: white"></i><strong> Share</strong>
+  </a>
+
+  <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flocalhost%3A3000%2Fcome_back_later&amp;text=What%20picture%20should%20you%20use%20on%20Tinder%3F%20%40Tinder_Genius%20gives%20you%20the%20answer%3A&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.tindergenius.com" class="btn btn-success btn-lg button-text">
+    <i class="fa fa-twitter" style="color: #139ae9"></i><strong style="color: #333333"> Tweet</strong>
+  </a>
+
+  <%= link_to beer_path, class: "btn btn-info btn-lg" do %>
+      <i class="fa fa-beer"></i><strong> Thank us with a beer!</strong>
+  <% end %>
+
+</div>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

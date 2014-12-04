@@ -4,6 +4,13 @@
 
 <% else %>
 
-     <%= render 'no_results_yet' %>
+  <%= render 'no_results_yet' %>
 
 <% end %>
+
+<div class="text-center" style="font-family: Source Sans Pro; padding-top:40px; padding-bottom:20px;">
+  <% if user_signed_in? %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+  <% end %>
+</div>
+

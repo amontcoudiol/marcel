@@ -41,5 +41,11 @@
   </div>
 </div>
 
+<div class="text-center" style="font-family: Source Sans Pro; padding-top:40px;padding-bottom:20px;">
+  <% if user_signed_in? %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+  <% end %>
+</div>
+
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

@@ -27,9 +27,19 @@ class CampaignsController < ApplicationController
 
   def results
     @campaign = current_user.campaigns.first
+    if current_user.target_gender && current_user.target_min_age && current_user.target_max_age && current_user.city
+      redirect_to profile_path(current_user.id) unless current_user.campaigns.first
+    else
+      redirect_to target_profile_path(current_user.id)
+    end
   end
 
   def come_back_later
+    if current_user.target_gender && current_user.target_min_age && current_user.target_max_age && current_user.city
+      redirect_to profile_path(current_user.id) unless current_user.campaigns.first
+    else
+      redirect_to target_profile_path(current_user.id)
+    end
   end
 
   def finish_voting
