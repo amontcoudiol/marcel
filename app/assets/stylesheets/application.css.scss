@@ -22,11 +22,19 @@ $body-bg: #7AC6DB;
 $text-color: #333333;
 $btn-danger-bg: #EB664D;
 $btn-primary-bg: #2E6E93;
+$btn-success-bg: #e6e6e6; // Twitter share
+$btn-warning-bg: #2d4386; // Facebook share
+$btn-info-bg: #eb664d; // Voting
+$btn-default-bg: #29c4b1; // Mojito
+$btn-default-border: #1f8e7b;
+$btn-default-color: white;
 $progress-bar-danger-bg: #EB664D;
+$progress-bar-info-bg: #2E6E93;
 
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
 @import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
@@ -118,3 +126,97 @@ h1 {
   background-color: white;
   max-height: 100%;
   }
+
+  /* Pages: Vote more later, Results, Results not ready yet */
+
+.button-text {
+  color: white;
+  font-size: 18px;
+  margin: 3px;
+}
+
+.facebook {
+  color: white;
+  font-size: 20px;
+}
+
+.text-under-title {
+  font-size: 20px;
+}
+
+.text-block {
+  font-size: 18px;
+  padding-bottom: 20px;
+  font-family: Source Sans Pro;
+}
+
+.text-block img {
+  margin:20px;
+}
+
+#title-no-pic-to-vote-on {
+  padding-bottom: 30px;
+}
+
+
+/* Pie chart */
+
+
+@mixin circle($size) {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - #{$size/2});
+  top: calc(50% - #{$size/2});
+  width: $size;
+  height: $size;
+}
+
+$size: 200px;
+.progress-pie-chart {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+  &.gt-50 {
+    background-color: #2e6e93;
+  }
+}
+.ppc-progress {
+  @include circle($size);
+  clip: rect(0, $size, $size, #{$size/2});
+  .ppc-progress-fill {
+    @include circle($size);
+    clip: rect(0, #{$size/2}, $size, 0);
+    background: #2e6e93;
+    transform: rotate(60deg);
+  }
+  .gt-50 & {
+    clip: rect(0, #{$size/2}, $size, 0);
+    .ppc-progress-fill {
+      clip: rect(0, $size, $size, #{$size/2});
+      background: #E5E5E5;
+    }
+  }
+}
+.ppc-percents {
+  @include circle(#{$size/1.15});
+  background: #fff;
+  text-align: center;
+  display: table;
+  span {
+    display: block;
+    font-size: 3.6em;
+    font-weight: bold;
+    color: #2e6e93;
+  }
+}
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.progress-pie-chart {
+  margin: 10px auto 0;
+}

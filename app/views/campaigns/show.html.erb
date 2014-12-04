@@ -44,7 +44,7 @@
   You voted <%= current_user.votes.length %> time(s).
   <br/>
   <% if current_user.votes.length > 4 %>
-    <%= link_to 'Done', results_path %>
+    <%= link_to 'Done', finish_voting_path %>
   <% else %>
     Only <%= 5 - current_user.votes.length %> votes left !
     <br/>

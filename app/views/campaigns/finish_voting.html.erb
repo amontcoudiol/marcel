@@ -1,22 +1,36 @@
-<h1 id="title-no-pic-to-vote-on"> <strong>Sorry - there's no more pictures to vote on, <%= current_user.first_name %>.</strong> </h1>
+<h1 id="title-no-pic-to-vote-on"> <strong>We'll email you the results soon, <%= current_user.first_name %>.</strong> </h1>
 
 <div class="text-center">
-  <img src="http://s29.postimg.org/ua2zj5ejb/empty_picture_tg.png" height="152" width="180"><br/><br/>
+  <img src="http://s27.postimg.org/s9a0alr9v/Screen_Shot_2014_12_04_at_10_25_25.png" height="137" width="120"><br/><br/>
 </div>
 
 <div class="text-under-title text-center" style="font-family: Source Sans Pro">
-  <p>Come back later! In the meantime, you can:</p>
+  <p><strong style="color: white;">To accelerate the process, you can:</strong></p><br/>
 </div>
 
 <div class="container">
 
   <div class="row">
 
-    <div class="col-xs-10 col-xs-offset-1 col-md-offset-1 col-md-5">
+    <div class="col-md-4 col-xl-3">
+      <div class="text-center">
+        <div class="text-block">
+          <img src="http://s14.postimg.org/acfu38atd/Screen_Shot_2014_12_04_at_11_07_23.png" height="200" width="200"><br/>
+          <p class="text-center">1. Continue voting<br/><span style="font-size: 16px;">(the more you vote the faster you'll know)</span></p>
+        </div>
+        <div>
+          <%= link_to next_votes_path, class: "btn btn-info btn-lg" do %>
+            <i class="fa fa-bolt"></i><strong> Vote more!</strong>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-xl-3">
       <div class="text-center">
         <div class="text-block">
           <img src="http://s24.postimg.org/blnz0scb9/present.png" height="200" width="200"><br/>
-            <p class="text-center">1. Help your friends get more matches on Tinder<br/>(they'll love you for life)</p>
+            <p class="text-center">2. Bring your friends on Tinder Genius<br/><span style="font-size: 16px;">(they'll love you for life)</span></p>
         </div>
         <a href="#" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://tindergenius.com','test','toolbar=0, status=0, top=300, left=500, width=500, height=400');return false" class="btn btn-warning btn-lg button-text">
           <i class="fa fa-facebook-square" style="color: white"></i><strong> Share</strong>
@@ -26,11 +40,12 @@
         </a>
       </div>
     </div>
-    <div class="col-xs-10 col-md-5">
+
+    <div class="col-md-4 col-xl-3">
       <div class="text-center">
         <div class="text-block">
           <img src="http://s30.postimg.org/jzfhlp5c1/mojito.png" height="200" width="200"><br/>
-          <p class="text-center">2. Go drink a Mojito<br/>(with your Tinder match?)</p>
+          <p class="text-center">If you're patient, go drink a Mojito<br/><span style="font-size: 16px;">(with your Tinder match?)</span></p>
         </div>
         <a target="blank" href="https://www.google.com/maps?q=mojitos+near+<%= current_user.city.gsub(/\s/,'+').gsub(/\,/,'+') %>" class="btn btn-default btn-lg">
           <i style="color: white" class="button-text"></i><i class="fa fa-thumbs-up"></i><strong> Oh yeah!</strong>

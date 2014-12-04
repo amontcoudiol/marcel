@@ -32,6 +32,9 @@ class CampaignsController < ApplicationController
   def come_back_later
   end
 
+  def finish_voting
+  end
+
   private
 
   def campaign_params
