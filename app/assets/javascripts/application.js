@@ -16,7 +16,7 @@
 //= require_tree .
 //= require facebookphotoselector.jquery
 //= require bootstrap-sprockets
-//= require bootstrap-slider.js
+//= require bootstrap-slider.min.js
 
 $(function() {
   // Resize the page
@@ -30,7 +30,7 @@ $(function() {
   }
   resize();
 
-
+  // responsibité photo vote
   $(window).load(function(){
     if ($(window).width() <= 480){
       if($('#pic1')){
@@ -68,6 +68,14 @@ $(function() {
     }
   });
 
+  // effet photo
+  $('#pic1').click(function () {
+    $(this).addClass('magictime openDownLeft');
+  });
+  $('#pic2').click(function () {
+    $(this).addClass('magictime openDownRight');
+  });
+
 
   // Slider
   if($("#slide")){
@@ -81,7 +89,7 @@ $(function() {
     });
   }
 
-
+  // Pie chart
   var $ppc = $('.progress-pie-chart'),
     percent = parseInt($ppc.data('percent')),
     deg = 360*percent/100;
@@ -91,7 +99,7 @@ $(function() {
   $('.ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
   $('.ppc-percents span').html(percent+'%');
 
-
+  // FB upload
  window.fbAsyncInit = function() {
     FB.init({
       appId      : '1540320802851738',
