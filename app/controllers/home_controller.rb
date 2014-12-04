@@ -7,4 +7,7 @@ class HomeController < ApplicationController
  def policy
  end
 
+ def beer
+ end
+
 end

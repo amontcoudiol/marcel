@@ -1,28 +1,42 @@
 <% content_for(:title) do %>
    Target Choice
 <% end %>
+<div class="space">
+  <h1 id="titletarget">What are you looking for? </h1>
+  <p>Please help us define the people you want to match </p>
+</div>
 
-<h1 >What are you looking for? </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12 text-center">
+      <%= bootstrap_form_for(@user, :url => profile_path(current_user.id),layout: :horizontal, label_col: "col-sm-4", control_col: "col-sm-4") do |f| %>
 
-<div class="col-md-12 text-center">
-  <%= bootstrap_form_for(@user, :url => profile_path(current_user.id),layout: :horizontal, label_col: "col-xs-4", control_col: "col-xs-4") do |f| %>
+        <%= f.select :target_gender, [["female"],["male"]]%>
+
+        <div class="form-group">
+          <label for="slide" class="control-label col-sm-4">Age Range </label>
+          <div class="col-sm-4">
+            <input id="slide" type="text" class="span2 " value="" data-slider-min="18" data-slider-max="77" data-slider-step="1" />
+          </div>
+        </div>
 
 
-    <%= f.select :target_gender, [["female"],["male"]]%>
+        <%= f.hidden_field :target_min_age, min: 13, placeholder: "18", class: "min-age" %>
 
 
-    <%= f.number_field :target_min_age, min: 13, placeholder: "18" %>
+        <%= f.hidden_field :target_max_age, min: 18, placeholder: "77", class: "max-age" %>
 
 
-    <%= f.number_field :target_max_age, min: 18, placeholder: "99" %>
+        <%= f.text_field :city, placeholder: "Paris", :label => 'Your City' %>
 
 
-    <%= f.text_field :city, placeholder: "Paris" %>
+      </br>
 
-  </br>
-
-  <%= f.submit 'Next', class: "btn btn-danger btn-lg " %>
+      <%= f.submit 'Next', class: "btn btn-danger btn-lg " %>
+    </div>
+  </div>
 </div>
   </br>
   </br>
+
 <% end %>

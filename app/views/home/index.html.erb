@@ -1,17 +1,35 @@
 <% content_for(:title) do %>
-  Tinder Genius | Home
+  Home
 <% end %>
 
 <div id="banner" >
   <img src="http://s22.postimg.org/9ee2xv5g1/logotinder.png" id="logo">
 
   <h1>Find your best side</h1>
-  <p>Tinder Genius helps you pick the right picture to get more matches on tinder.</p>
+  <p>Tinder Genius helps you pick the right picture to get more matches on Tinder.</p>
 
   <div id="fbbut">
     <%= render 'fb_login' %>
   </div>
+  <div id="footer">
+    <ul class="list-inline social text-center">
+      <li>
+        <a href="https://twitter.com/Tinder_Genius" TARGET="_blank">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://facebook.com/tindergenius" TARGET="_blank">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <%= link_to beer_path() do %>
+          <i class="fa fa-beer "> Buy us a beer</i>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 </div>
-
 
 
