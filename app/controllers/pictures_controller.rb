@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  skip_before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def create
     @picture = Picture.create!(photo_params)

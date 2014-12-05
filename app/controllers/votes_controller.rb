@@ -1,5 +1,5 @@
 class VotesController < ApplicationController
-  skip_before_action :authenticate_user!   # WHAT THE FUCK
+  before_action :authenticate_user!   # WHAT THE FUCK
   before_action :set_campaign, only: :create
 
   def next

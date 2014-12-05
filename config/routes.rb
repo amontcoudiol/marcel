@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'results' => 'campaigns#results'
   get 'come_back_later' => 'campaigns#come_back_later'
   get 'finish_voting' => 'campaigns#finish_voting'
+  get 'users/sign_in' =>  "home#index"
 
   resources :pictures
 
