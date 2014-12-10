@@ -1,3 +1,7 @@
+<% content_for(:title) do %>
+   Wait for your results
+<% end %>
+
 <h1>Your results are not ready yet!</h1>
 
 <div class="progress-pie-chart" data-percent="<%= (((@campaign.votes.length + 1) / 6.0) * 100) %>">
