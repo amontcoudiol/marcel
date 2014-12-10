@@ -102,7 +102,7 @@ $(function() {
   // FB upload
  window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1540320802851738',
+      appId      : '1397748350517057',
       xfbml      : true,
       version    : 'v2.1'
     });
