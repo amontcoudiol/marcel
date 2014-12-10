@@ -17,25 +17,27 @@
           <label for="slide" class="control-label col-sm-4">Age Range </label>
           <div class="col-sm-4">
             <div class="input-group input-group-sm">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">18</button>
-        </span>
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">18</button>
+              </span>
+
             <input id="slide" type="text" class="span2 " value="" data-slider-min="18" data-slider-max="77" data-slider-step="1" />
             <span class="input-group-btn input-group-sm">
-        <button class="btn btn-default" type="button">77</button>
-        </span>
-          </div>
+              <button class="btn btn-default" type="button">77</button>
+            </span>
           </div>
         </div>
+      </div>
+
+<%# à ameliorer %>
+
+        <%= f.hidden_field :target_min_age, min: 13, placeholder: "18", class: "min-age" %>
 
 
-        <%= f.text_field :target_min_age, min: 13, placeholder: "18", class: "min-age" %>
+        <%= f.hidden_field :target_max_age, min: 18, placeholder: "77", class: "max-age" %>
 
 
-        <%= f.text_field :target_max_age, min: 18, placeholder: "77", class: "max-age" %>
-
-
-        <%= f.text_field :city, placeholder: "Paris", :label => 'Your City', id: "user_input_autocomplete_address", :prepend => '@'%>
+        <%= f.text_field :city, placeholder: "Paris", :label => 'Your City'%>
 
 
       </br>

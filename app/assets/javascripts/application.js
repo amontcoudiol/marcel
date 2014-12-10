@@ -71,7 +71,7 @@ $(function() {
   // Slider
   if($("#slide")){
     $("#slide").slider({
-      value : [ parseInt($('.min-age').val() || 15),parseInt($('.max-age').val() || 73) ]
+      value : [ parseInt($('.min-age').val() || 18),parseInt($('.max-age').val() || 73) ]
     });
     $("#slide").on('change',function (e) {
       var value = $(this).val().split(',');
@@ -80,7 +80,7 @@ $(function() {
     });
 
     // Permet de rentrer Age range lorsqu'on modif la ville
-    $("#user_input_autocomplete_address").on('change',function (e) {
+    $("#user_city").on('change',function (e) {
       var value = $("#slide").val().split(',');
       $('.min-age').val(value[0]);
       $('.max-age').val(value[1]);
