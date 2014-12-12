@@ -30,6 +30,15 @@ $(function() {
   }
   resize();
 
+  //homepage invitation;code;email effect
+
+  $("#ihaveacode").on('click',function (e) {
+      $("#ihaveacode").hide();
+      $('#invit').hide();
+      $("#mdp").removeClass("hidden");
+    });
+
+
   // responsibité photo vote
   $(window).load(function(){
     if ($(window).width() <= 480){

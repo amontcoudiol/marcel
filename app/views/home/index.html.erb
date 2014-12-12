@@ -8,7 +8,51 @@
   <h1>Show your best side</h1>
   <p>Tinder Genius helps you pick the right picture to get more matches on Tinder.</p>
 
-  <div id="fbbut">
+  <div id="invit">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ask for an invitation</label>
+              <input type="email" class="form-control " id="exampleInputEmail1" placeholder="Enter your email">
+              <input type="submit" value="I want it" class="btn btn-danger btn-sm">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="mdp" class="hidden">
+    <div class="container">
+      <div class="row">
+        <div class="text-center">
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <input type="password" class="form-control " id="password" placeholder="Enter your code">
+              <input type="submit" value="start" class="btn btn-danger btn-sm">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ihaveacode">
+    <div class="container">
+      <div class="row">
+        <div class="text-center">
+              <input type="submit" value="I already have a code" class="btn btn-info btn-xs">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="fbbut" class="hidden">
     <%= render 'fb_login' %>
   </div>
   <div id="footer">
