@@ -1,5 +1,5 @@
 class CampaignsController < ApplicationController
- skip_before_action :authenticate_user!
+ before_action :authenticate_user!
 
   def new
     @campaign = Campaign.new
