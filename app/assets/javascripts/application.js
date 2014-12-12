@@ -30,6 +30,15 @@ $(function() {
   }
   resize();
 
+  //homepage invitation;code;email effect
+
+  $("#ihaveacode").on('click',function (e) {
+      $("#ihaveacode").hide();
+      $('#invit').hide();
+      $("#mdp").removeClass("hidden");
+    });
+
+
   // responsibité photo vote
   $(window).load(function(){
     if ($(window).width() <= 480){
@@ -68,22 +77,20 @@ $(function() {
     }
   });
 
-  // effet photo
-  $('#pic1').click(function () {
-    $(this).addClass('magictime openDownLeft');
-  });
-  $('#pic2').click(function () {
-    $(this).addClass('magictime openDownRight');
-  });
-
-
   // Slider
   if($("#slide")){
     $("#slide").slider({
-      value : [ parseInt($('.min-age').val() || 18),parseInt($('.max-age').val() || 77) ]
+      value : [ parseInt($('.min-age').val() || 18),parseInt($('.max-age').val() || 73) ]
     });
     $("#slide").on('change',function (e) {
       var value = $(this).val().split(',');
+      $('.min-age').val(value[0]);
+      $('.max-age').val(value[1]);
+    });
+
+    // Permet de rentrer Age range lorsqu'on modif la ville
+    $("#user_city").on('change',function (e) {
+      var value = $("#slide").val().split(',');
       $('.min-age').val(value[0]);
       $('.max-age').val(value[1]);
     });
