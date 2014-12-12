@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
 
   def results(user)
     @user = user # Instance variable => available in view
-    mail(to: @user.email, subject: 'Your results are ready!')
+    mail(to: @user.email, subject: "#{@user.first_name}: Get Your Results!")
     # This will render a view in `app/views/user_mailer`!
   end
 
