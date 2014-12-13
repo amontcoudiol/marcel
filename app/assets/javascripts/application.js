@@ -38,6 +38,24 @@ $(function() {
       $("#mdp").removeClass("hidden");
     });
 
+  $("#back").on('click',function (e) {
+      $("#mdp").addClass("hidden");
+      $("#ihaveacode").show();
+      $('#invit').show();
+    });
+
+  $('#start').click(function(){
+    //console.log($("#password").val())
+    if ($("#password").val() == "love") {
+      $("#fbbut").removeClass("hidden");
+      $("#mdp").addClass("hidden");
+      //console.log($("#password").val())
+    }
+    else {
+     (window).alert("Wrong password");
+    }
+  });
+
 
   // responsibité photo vote
   $(window).load(function(){
