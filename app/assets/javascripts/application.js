@@ -86,6 +86,8 @@ $(function() {
       var value = $(this).val().split(',');
       $('.min-age').val(value[0]);
       $('.max-age').val(value[1]);
+      document.getElementById("slidemin").innerHTML = value[0];
+      document.getElementById("slidemax").innerHTML = value[1];
     });
 
     // Permet de rentrer Age range lorsqu'on modif la ville
