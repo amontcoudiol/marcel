@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get 'policy' => 'home#policy'
   get 'beer' => 'home#beer'
 
-  post 'invitationrequest', to: 'home#invitationrequest', as: :invitationrequest
+  post 'subscribe', to: 'home#subscribe', as: :subscribe
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
