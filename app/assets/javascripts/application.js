@@ -38,6 +38,24 @@ $(function() {
       $("#mdp").removeClass("hidden");
     });
 
+  $("#back").on('click',function (e) {
+      $("#mdp").addClass("hidden");
+      $("#ihaveacode").show();
+      $('#invit').show();
+    });
+
+  $('#start').click(function(){
+    //console.log($("#password").val())
+    if ($("#password").val() == "love") {
+      $("#fbbut").removeClass("hidden");
+      $("#mdp").addClass("hidden");
+      //console.log($("#password").val())
+    }
+    else {
+     (window).alert("Wrong password");
+    }
+  });
+
 
   // responsibité photo vote
   $(window).load(function(){
@@ -86,6 +104,8 @@ $(function() {
       var value = $(this).val().split(',');
       $('.min-age').val(value[0]);
       $('.max-age').val(value[1]);
+      document.getElementById("slidemin").innerHTML = value[0];
+      document.getElementById("slidemax").innerHTML = value[1];
     });
 
     // Permet de rentrer Age range lorsqu'on modif la ville
@@ -109,7 +129,7 @@ $(function() {
   // FB upload
  window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1540320802851738',
+      appId      : '1397748350517057',
       xfbml      : true,
       version    : 'v2.1'
     });
