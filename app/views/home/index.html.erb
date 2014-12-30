@@ -12,13 +12,13 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-6 col-xs-offset-3">
-          <form class="form-inline" role="form">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Ask for an invitation</label>
-              <input type="email" class="form-control " id="exampleInputEmail1" placeholder="Enter your email">
-              <input type="submit" value="I want it" class="btn btn-danger btn-sm">
-            </div>
-          </form>
+          <%= form_tag({controller: "home", action: "subscribe"}, method: "post", class: "form-inline") do %>
+           <div class="form-group">
+              <%= label_tag(:email, "Ask for an invitation") %>
+              <%= email_field_tag(:email, nil, options = {placeholder: "Enter your email", class: "form-control"}) %>
+              <%= submit_tag("I want it", class: "btn btn-danger btn-sm") %>
+              </div>
+          <% end %>
         </div>
       </div>
     </div>
