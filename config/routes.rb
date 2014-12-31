@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'come_back_later' => 'campaigns#come_back_later'
   get 'finish_voting' => 'campaigns#finish_voting'
   get 'users/sign_in' =>  "home#index"
+  get 'users/sign_up' =>  "home#index"
 
   resources :pictures
 
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
   root to: "home#index"
   get 'policy' => 'home#policy'
   get 'beer' => 'home#beer'
+
+  post 'subscribe', to: 'home#subscribe', as: :subscribe
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
