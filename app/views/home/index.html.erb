@@ -11,12 +11,12 @@
   <div id="invit">
     <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-xs-offset-3">
+        <div class="col-xs-10 col-xs-offset-1">
           <%= form_tag({controller: "home", action: "subscribe"}, method: "post", class: "form-inline") do %>
            <div class="form-group">
               <%= label_tag(:email, "Ask for an invitation") %>
               <%= email_field_tag(:email, nil, options = {placeholder: "Enter your email", class: "form-control"}) %>
-              <%= submit_tag("I want it", class: "btn btn-danger btn-sm") %>
+              <%= submit_tag("I want it", class: "btn btn-danger") %>
               </div>
           <% end %>
         </div>
